@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mojog\\Desktop\\LoFo\\LoFo.vbproj": {}
+    "C:\\Users\\mojog\\Desktop\\LoFo\\LoFo\\LoFo.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\mojog\\Desktop\\LoFo\\LoFo.vbproj": {
+    "C:\\Users\\mojog\\Desktop\\LoFo\\LoFo\\LoFo.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mojog\\Desktop\\LoFo\\LoFo.vbproj",
+        "projectUniqueName": "C:\\Users\\mojog\\Desktop\\LoFo\\LoFo\\LoFo.vbproj",
         "projectName": "LoFo",
-        "projectPath": "C:\\Users\\mojog\\Desktop\\LoFo\\LoFo.vbproj",
+        "projectPath": "C:\\Users\\mojog\\Desktop\\LoFo\\LoFo\\LoFo.vbproj",
         "packagesPath": "C:\\Users\\mojog\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mojog\\Desktop\\LoFo\\obj\\",
+        "outputPath": "C:\\Users\\mojog\\Desktop\\LoFo\\LoFo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mojog\\AppData\\Roaming\\NuGet\\NuGet.Config",
