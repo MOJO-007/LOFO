@@ -54,3 +54,4 @@ C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\refint\LoFo.dll
 C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.pdb
 C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.genruntimeconfig.cache
 C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\ref\LoFo.dll
+C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.FindItem.resources

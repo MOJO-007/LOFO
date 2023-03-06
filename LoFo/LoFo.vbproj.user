@@ -4,6 +4,9 @@
     <Compile Update="Ahome.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FindItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Login.vb">
       <SubType>Form</SubType>
     </Compile>
