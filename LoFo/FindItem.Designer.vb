@@ -33,7 +33,7 @@ Partial Class FindItem
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(402, 264)
+        Me.DataGridView1.Size = New System.Drawing.Size(960, 537)
         Me.DataGridView1.TabIndex = 0
         '
         'FindItem
