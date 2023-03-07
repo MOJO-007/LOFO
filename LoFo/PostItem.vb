@@ -36,23 +36,16 @@ Public Class PostItem
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim encodeTypeString As String = String.Empty
-        If (PictureBox1.ImageLocation.ToLower.EndsWith(".jpg")) Then
-            encodeType = ImageFormat.Jpeg
-            encodeTypeString = "data:image/jpeg;base64,"
-        ElseIf (PictureBox1.ImageLocation.ToLower.EndsWith(".png")) Then
-            encodeType = ImageFormat.Png
-            encodeTypeString = "data:image/png;base64,"
-        ElseIf (PictureBox1.ImageLocation.ToLower.EndsWith(".gif")) Then
-            encodeType = ImageFormat.Gif
-            encodeTypeString = "data:image/gif;base64,"
-        End If
-        decodingString = encodeTypeString
+        Dim imagestring As String
         Dim id As String
         id = CType(random.Next(0, 9999999), String)
+        Dim ms = New MemoryStream()
+        PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
+        Dim imageBytes = ms.ToArray()
+        imagestring = Convert.ToBase64String(imageBytes)
         Dim newItem As New MyItem() With
         {
-         .ImageStrings = encodeTypeString & ImageToBase64(PictureBox1.Image, encodeType),
+         .ImageStrings = imagestring,
          .ItemId = id,
          .username = Login.TextBox1.Text,
          .Itemname = TextBox1.Text,
