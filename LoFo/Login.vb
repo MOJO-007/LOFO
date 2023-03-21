@@ -1,52 +1,55 @@
-﻿Imports FireSharp.Config
-Imports FireSharp.Response
-Imports FireSharp.Interfaces
-Imports FireSharp
-Imports System.Windows
+﻿Imports System.Windows
+Imports System.Data.SQLite
+Imports System.Collections.ObjectModel
+
 
 Public Class Login
-    Private fcon As New FirebaseConfig() With {
-                .AuthSecret = "C5uzbAuqUfaFh5JFoGdTps4ka0kk0Hq3T5cUE2cU",
-                .BasePath = "https://lofo-7c69f-default-rtdb.firebaseio.com/"
-            }
-    Private client As FirebaseClient
+
+    Dim connectionString As String = "Data Source=C:\Users\mojog\Desktop\LoFo\mydatabase.db;Version=3;"
+    Public connection As New SQLiteConnection(connectionString)
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            client = New FireSharp.FirebaseClient(fcon)
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString())
-        End Try
+        connection.Open()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+
 #Region "Condition"
         If (String.IsNullOrWhiteSpace(TextBox1.Text) AndAlso String.IsNullOrWhiteSpace(TextBox2.Text)) Then
             MessageBox.Show("Please fill all the fields")
             Return
         End If
 #End Region
-        Dim res = client.Get("Users/" + TextBox1.Text)
-        Dim resUser = res.ResultAs(Of MyUser)
+        Dim query As String = "SELECT usertype FROM users WHERE username = @username AND password = @password"
+        Dim command As New SQLiteCommand(query, connection)
+        command.Parameters.AddWithValue("@username", TextBox1.Text)
+        command.Parameters.AddWithValue("@password", TextBox2.Text)
 
-        Dim curUser As New MyUser With {
-        .Username = TextBox1.Text,
-        .Password = TextBox2.Text
-        }
-
-        If (MyUser.IsEqual(resUser, curUser)) Then
-            MessageBox.Show("Successfull Login")
-            If (resUser.UserType.Equals("admin")) Then
+        Dim reader As SQLiteDataReader = command.ExecuteReader()
+        If reader.Read() Then
+            Dim userType As String = reader.GetString(0)
+            If userType = "admin" Then
+                MessageBox.Show("Welcome, admin!")
                 Me.Hide()
                 Ahome.Show()
-
+                TextBox1.Clear()
+                TextBox2.Clear()
+                'connection.Close()
             Else
+                MessageBox.Show("Welcome, " + TextBox1.Text)
                 Me.Hide()
                 UHome.Show()
+                ' connection.Close()
+                TextBox1.Clear()
+                TextBox2.Clear()
+
             End If
 
         Else
-                MyUser.ShowError()
-            End If
-
+            MessageBox.Show("Incorrect username or password.")
+            TextBox1.Clear()
+            TextBox2.Clear()
+            'connection.Close()
+        End If
     End Sub
 End Class

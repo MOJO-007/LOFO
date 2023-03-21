@@ -1,29 +1,14 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-Imports FireSharp.Config
-Imports FireSharp.Response
-Imports FireSharp.Interfaces
-Imports FireSharp
 Imports System.Text
-Imports System.Drawing.Imaging
 Imports System.IO
+Imports System.Windows
+Imports System.Data.SQLite
+Imports System.Collections.ObjectModel
+Imports System.Diagnostics.Tracing
 
 Public Class PostItem
-    Shared random As New Random()
-    Dim encodeType As ImageFormat = ImageFormat.Jpeg
-    Dim decodingString As String = String.Empty
-    Private fcon As New FirebaseConfig() With {
-                .AuthSecret = "C5uzbAuqUfaFh5JFoGdTps4ka0kk0Hq3T5cUE2cU",
-                .BasePath = "https://lofo-7c69f-default-rtdb.firebaseio.com/"
-            }
-    Private client As FirebaseClient
-    Private Sub PostItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label3.Hide()
-        Try
-            client = New FireSharp.FirebaseClient(fcon)
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString())
-        End Try
-    End Sub
+    Dim connectionString As String = "Data Source=C:\Users\mojog\Desktop\LoFo\mydatabase.db;Version=3;Journal Mode=WAL"
+    Public connection As New SQLiteConnection(connectionString)
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim img1 As OpenFileDialog = New OpenFileDialog()
@@ -36,33 +21,39 @@ Public Class PostItem
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim imagestring As String
-        Dim id As String
-        id = CType(random.Next(0, 9999999), String)
-        Dim ms = New MemoryStream()
-        PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
-        Dim imageBytes = ms.ToArray()
-        imagestring = Convert.ToBase64String(imageBytes)
-        Dim newItem As New MyItem() With
-        {
-         .ImageStrings = imagestring,
-         .ItemId = id,
-         .username = Login.TextBox1.Text,
-         .Itemname = TextBox1.Text,
-         .ItemDescription = TextBox2.Text
-        }
+        Dim command As New SQLiteCommand("INSERT INTO found_items(item_type, item_description, location_found, date_found, contact_phone, photo_path, username, item_title) VALUES (@item_type, @item_description, @location_found, @date_found, @contact_phone, @photo_path, @username, @item_title)", connection)
+        'Dim commandtext As String = "INSERT INTO found_items(item_type, item_description, location_found, date_found, contact_phone, photo_path, username) VALUES (@item_type, @item_description, @location_found, @date_found, @contact_phone, @photo_path, @username)"
+        'Using command As New SQLiteCommand(commandtext, connection)
 
-        Dim setter = client.Set("Items/" + id, newItem)
-        PictureBox1.Image = Nothing
+
+        command.Parameters.AddWithValue("@item_title", TextBox1.Text)
+        command.Parameters.AddWithValue("@item_type", ComboBox1.Text)
+        command.Parameters.AddWithValue("@item_description", TextBox2.Text)
+        command.Parameters.AddWithValue("@location_found", TextBox3.Text)
+        command.Parameters.AddWithValue("@date_found", DateTimePicker1.Value.ToString("yyyy-MM-dd"))
+        command.Parameters.AddWithValue("@contact_phone", TextBox4.Text)
+        command.Parameters.AddWithValue("@photo_path", Label3.Text)
+        command.Parameters.AddWithValue("@username", Login.TextBox1.Text)
+        connection.Open()
+        Dim rc As Integer = command.ExecuteNonQuery()
+        If (rc > 0) Then
+            MessageBox.Show("Item is Uploaded, Thank you for your efforts!")
+            Me.Close()
+            UHome.Show()
+            connection.Close()
+        Else
+            MessageBox.Show("Oops, Item is not Uploaded.")
+            Me.Refresh()
+        End If
+        'End Using
     End Sub
 
+    Private Sub PostItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    Public Function ImageToBase64(ByVal image As Image, ByVal format As ImageFormat) As String
-        Using ms As New MemoryStream()
-            image.Save(ms, format)
-            Dim imageBytes As Byte() = ms.ToArray()
-            Dim base64String As String = Convert.ToBase64String(imageBytes)
-            Return base64String
-        End Using
-    End Function
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Hide()
+        UHome.Show()
+    End Sub
 End Class

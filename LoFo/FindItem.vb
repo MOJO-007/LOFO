@@ -1,78 +1,65 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-Imports FireSharp.Config
-Imports FireSharp.Response
-Imports FireSharp.Interfaces
-Imports FireSharp
 Imports System.Text
 Imports System.IO
-Imports System.Drawing.Imaging
-Imports Newtonsoft.Json
-Imports System.Reflection.Emit
+Imports System.Windows
+Imports System.Data.SQLite
+Imports System.Collections.ObjectModel
+Imports System.Runtime.CompilerServices
 
 Public Class FindItem
-    Private fcon As New FirebaseConfig() With {
-                .AuthSecret = "C5uzbAuqUfaFh5JFoGdTps4ka0kk0Hq3T5cUE2cU",
-                .BasePath = "https://lofo-7c69f-default-rtdb.firebaseio.com/"
-            }
-    Private client As FirebaseClient
+    Dim connectionString As String = "Data Source=C:\Users\mojog\Desktop\LoFo\mydatabase.db;Version=3;"
+    Public connection As New SQLiteConnection(connectionString)
     Private Sub FindItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim base64String As String
+        connection.Open()
         DataGridView1.ReadOnly = True
-        Try
-            client = New FireSharp.FirebaseClient(fcon)
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString())
-        End Try
+        Dim sql As String = "SELECT id, item_title, photo_path FROM found_items"
+        Dim cmd As New SQLiteCommand(sql, connection)
+        Dim adapter As New SQLiteDataAdapter(cmd)
+        Dim table As New DataTable()
+        adapter.Fill(table)
 
-        Dim res As FirebaseResponse = client.Get("Items")
-        If res IsNot Nothing AndAlso res.Body IsNot Nothing Then
-            Dim data = res.ResultAs(Of Dictionary(Of String, MyItem))()
 
-            Dim table As New DataTable()
-            table.Columns.Add("Name")
-            table.Columns.Add("Id", GetType(Integer))
-            table.Columns.Add("ImageColumn", GetType(Byte()))
+        DataGridView1.AutoGenerateColumns = False
+        DataGridView1.RowTemplate.Height = 200
+        DataGridView1.AllowUserToAddRows = False
 
-            For Each item In data
-                Dim row = table.NewRow()
-                row("Name") = item.Value.Itemname
-                row("Id") = item.Value.ItemId
-                base64String = item.Value.ImageStrings
-                Dim imageData As Byte() = Convert.FromBase64String(base64String)
-                row("ImageColumn") = imageData
-                table.Rows.Add(row)
-            Next
 
-            DataGridView1.DataSource = table
+        Dim colId As New DataGridViewTextBoxColumn()
+        colId.DataPropertyName = "id"
+        colId.HeaderText = "Item ID"
+        colId.Name = "colId"
+        DataGridView1.Columns.Add(colId)
 
-            Dim imageColumn As DataGridViewImageColumn = DataGridView1.Columns("ImageColumn")
-            imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom
-        End If
-        ' Set the AutoSizeRowsMode property to None
-        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
+        Dim colTitle As New DataGridViewTextBoxColumn()
+        colTitle.DataPropertyName = "item_title"
+        colTitle.HeaderText = "Item Title"
+        colTitle.Name = "colTitle"
+        DataGridView1.Columns.Add(colTitle)
 
-        ' Set the row height to the desired value
-        For Each row As DataGridViewRow In DataGridView1.Rows
-            row.Height = 200
+        Dim colImage As New DataGridViewImageColumn()
+        colImage.DataPropertyName = "photo_path"
+        colImage.HeaderText = "Image"
+        colImage.Name = "colImage"
+        colImage.ImageLayout = DataGridViewImageCellLayout.Stretch
+        DataGridView1.Columns.Add(colImage)
+
+        For Each row As DataRow In table.Rows
+            Dim id As Integer = Convert.ToInt32(row("id"))
+            Dim title As String = row("item_title").ToString()
+            Dim imagePath As String = row("photo_path").ToString()
+            Dim image As Image = Image.FromFile(imagePath)
+            DataGridView1.Rows.Add(id, title, image)
         Next
 
-        ' Set the width of all columns to 100 pixels
-        For Each column As DataGridViewColumn In DataGridView1.Columns
-            column.Width = 270
-        Next
+        Me.Controls.Add(DataGridView1)
 
+        DataGridView1.Columns(0).Width = 300
+        DataGridView1.Columns(1).Width = 300
+        DataGridView1.Columns(2).Width = 300
     End Sub
 
-
-
-
-
-
-    Public Function Base64ToImage(ByVal base64code As String) As Image
-        Dim imageBytes As Byte() = Convert.FromBase64String(base64code)
-        Dim ms As New MemoryStream(imageBytes, 0, imageBytes.Length)
-        Dim tmpimage As Image = Image.FromStream(ms, True)
-        Return tmpimage
-    End Function
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        UHome.Show()
+    End Sub
 End Class
