@@ -62,4 +62,19 @@ Public Class FindItem
         Me.Hide()
         UHome.Show()
     End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        If e.ColumnIndex = 2 AndAlso e.RowIndex >= 0 Then
+            ' Retrieve the information for the selected item from the database
+            Dim itemID As Integer = CInt(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
+            Dim itemTitle As String = CStr(DataGridView1.Rows(e.RowIndex).Cells(1).Value)
+            'Dim itemImage As Image = Image.FromFile(CStr(DataGridView1.Rows(e.RowIndex).Cells(2).Value))
+
+            ' Create a new instance of the ItemDetailsForm form with the item information as arguments
+            Dim itemDetailsForm As New ItemDetails(itemID, itemTitle)
+
+            ' Show the new form as a dialog box
+            itemDetailsForm.ShowDialog()
+        End If
+    End Sub
 End Class

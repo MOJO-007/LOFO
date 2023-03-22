@@ -31,58 +31,62 @@ Partial Class Login
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(383, 121)
+        Me.TextBox1.Location = New System.Drawing.Point(438, 161)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.PlaceholderText = "Enter your username"
-        Me.TextBox1.Size = New System.Drawing.Size(257, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(293, 27)
         Me.TextBox1.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(300, 124)
+        Me.Label1.Location = New System.Drawing.Point(343, 165)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 15)
+        Me.Label1.Size = New System.Drawing.Size(86, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "USERNAME"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(300, 183)
+        Me.Label2.Location = New System.Drawing.Point(343, 244)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 15)
+        Me.Label2.Size = New System.Drawing.Size(87, 20)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "PASSWORD"
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(383, 180)
+        Me.TextBox2.Location = New System.Drawing.Point(438, 240)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.PlaceholderText = "Enter your Password"
-        Me.TextBox2.Size = New System.Drawing.Size(257, 23)
+        Me.TextBox2.Size = New System.Drawing.Size(293, 27)
         Me.TextBox2.TabIndex = 2
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(383, 230)
+        Me.Button1.Location = New System.Drawing.Point(438, 307)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(86, 31)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "LOGIN"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Login
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(984, 561)
+        Me.ClientSize = New System.Drawing.Size(1082, 753)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
