@@ -29,6 +29,8 @@ Public Class LogItem
     End Sub
 
     Private Sub LogItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        TextBox1.PlaceholderText = "Enter details : " & Environment.NewLine & " Item Description" & Environment.NewLine & " How you lost it" & Environment.NewLine & " etc."
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
+        Label3.Focus()
     End Sub
 End Class

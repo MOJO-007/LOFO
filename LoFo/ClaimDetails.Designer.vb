@@ -39,93 +39,107 @@ Partial Class ClaimDetails
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(392, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(453, 78)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(284, 181)
+        Me.PictureBox1.Size = New System.Drawing.Size(220, 181)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(161, 42)
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox1.Location = New System.Drawing.Point(238, 51)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(198, 67)
         Me.TextBox1.TabIndex = 1
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(161, 151)
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox2.Location = New System.Drawing.Point(234, 203)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(198, 67)
         Me.TextBox2.TabIndex = 2
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(86, 224)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Location = New System.Drawing.Point(80, 333)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(146, 23)
+        Me.Button1.Size = New System.Drawing.Size(150, 58)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "ACCEPT CLAIM"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(238, 224)
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Location = New System.Drawing.Point(279, 333)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(146, 23)
+        Me.Button2.Size = New System.Drawing.Size(152, 58)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "REJECT CLAIM"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(32, 60)
+        Me.Label1.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(3, 53)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 15)
+        Me.Label1.Size = New System.Drawing.Size(219, 19)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Uploaders Description"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(41, 178)
+        Me.Label2.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Location = New System.Drawing.Point(10, 224)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 15)
+        Me.Label2.Size = New System.Drawing.Size(209, 19)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Claimant Description"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(182, 9)
+        Me.Label3.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(305, 15)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(41, 15)
+        Me.Label3.Size = New System.Drawing.Size(69, 19)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Label3"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(161, 122)
+        Me.TextBox3.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox3.Location = New System.Drawing.Point(238, 146)
         Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(100, 23)
         Me.TextBox3.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(41, 125)
+        Me.Label4.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.Location = New System.Drawing.Point(70, 148)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(85, 15)
+        Me.Label4.Size = New System.Drawing.Size(139, 19)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Uploaded Date"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(496, 203)
+        Me.Label5.Location = New System.Drawing.Point(636, 376)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(41, 15)
         Me.Label5.TabIndex = 10
@@ -135,7 +149,7 @@ Partial Class ClaimDetails
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(496, 224)
+        Me.Label6.Location = New System.Drawing.Point(636, 397)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 15)
         Me.Label6.TabIndex = 11
@@ -146,7 +160,8 @@ Partial Class ClaimDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(214, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(111, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(684, 415)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)

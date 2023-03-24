@@ -18,6 +18,7 @@ Public Class ItemDetails
 
     Protected Overrides Sub OnLoad(ByVal e As EventArgs)
         MyBase.OnLoad(e)
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
         connection.Open()
         Dim command As New SQLiteCommand("SELECT photo_path from found_items WHERE id=@id", connection)
         command.Parameters.AddWithValue("@id", itemId)
@@ -35,11 +36,14 @@ Public Class ItemDetails
         Me.Close()
     End Sub
 
-    Private Sub ItemDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+#Region "Condition"
+        If (String.IsNullOrWhiteSpace(TextBox1.Text) AndAlso String.IsNullOrWhiteSpace(TextBox2.Text)) Then
+            MessageBox.Show("Please fill all the fields")
+            Return
+        End If
+#End Region
         Dim claimant_desc As String = TextBox2.Text
         Dim claimant_mail As String = TextBox1.Text
         Dim command As New SQLiteCommand("SELECT item_description from found_items WHERE id=@id", connection)
@@ -61,5 +65,9 @@ Public Class ItemDetails
             MessageBox.Show("Oops, Item is not Uploaded.")
             Me.Refresh()
         End If
+    End Sub
+
+    Private Sub ItemDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

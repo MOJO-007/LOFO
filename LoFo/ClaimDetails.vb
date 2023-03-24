@@ -62,7 +62,7 @@ Public Class ClaimDetails
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MessageBox.Show("Claim Accepted!")
+        MessageBox.Show("Claim Accepted! and the user is notified.")
         connection.Open()
         Dim command As New SQLiteCommand("UPDATE claims SET status = @new_value WHERE id = @iid", connection)
         command.Parameters.AddWithValue("@iid", itemId)
@@ -73,7 +73,8 @@ Public Class ClaimDetails
         command2.ExecuteNonQuery()
         connection.Close()
         SendEmail()
-        'Me.Hide()
+        Me.Hide()
+        Ahome.Show()
     End Sub
 
     Public Sub SendEmail()
@@ -123,8 +124,39 @@ Public Class ClaimDetails
     End Sub
 
 
+
+    Public Sub SendEmail2()
+        Try
+            connection.Open()
+
+            Dim email As String = Label5.Text
+            Dim contact As String = ""
+
+
+            Dim smtpClient As New SmtpClient("smtp.gmail.com", 587)
+            smtpClient.EnableSsl = True
+            smtpClient.Credentials = New Net.NetworkCredential("study.time0604@gmail.com", "qiiobaukqjpwclli")
+
+            MessageBox.Show(email)
+
+            Dim message As New MailMessage()
+            message.From = New MailAddress("study.time0604@gmail.com")
+            message.To.Add(New MailAddress(email))
+            message.Subject = "Mail Regarding your item Claim"
+            message.Body = "Your Claim request is Rejected! Sorry to inform that you claim was not sactisfied. Kindly raise another detailed claim for review . - LOFO TEAM"
+            message.IsBodyHtml = False
+
+            smtpClient.Send(message)
+            connection.Close()
+        Catch e As Exception
+            MessageBox.Show(e.Message)
+        End Try
+    End Sub
+
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        MessageBox.Show("Claim Rejected")
+        SendEmail2()
+        MessageBox.Show("Claim Rejected! and the user is notified.")
         connection.Open()
         Dim command2 As New SQLiteCommand("DELETE FROM claims WHERE claim_id = @iid", connection)
         command2.Parameters.AddWithValue("@iid", claimId)

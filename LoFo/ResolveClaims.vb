@@ -8,6 +8,15 @@ Public Class ResolveClaims
         Dim table As New DataTable()
         adapter.Fill(table)
         DataGridView1.DataSource = table
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
+
+        DataGridView1.Columns(0).Width = 135
+        DataGridView1.Columns(1).Width = 135
+        DataGridView1.Columns(2).Width = 139
+
+        Dim font As New Font("Unispace", 14, FontStyle.Bold)
+        DataGridView1.DefaultCellStyle.Font = font
+        DataGridView1.Rows(0).Selected = False
 
     End Sub
 

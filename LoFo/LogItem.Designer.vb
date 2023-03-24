@@ -32,60 +32,71 @@ Partial Class LogItem
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(82, 85)
+        Me.TextBox1.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBox1.Location = New System.Drawing.Point(12, 130)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(126, 94)
+        Me.TextBox1.Size = New System.Drawing.Size(418, 114)
         Me.TextBox1.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 88)
+        Me.Label1.Font = New System.Drawing.Font("Unispace", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(101, 86)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 15)
+        Me.Label1.Size = New System.Drawing.Size(191, 33)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Log Details"
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(101, 283)
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button2.Location = New System.Drawing.Point(101, 346)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(191, 53)
         Me.Button2.TabIndex = 5
         Me.Button2.Text = "ADD LOG"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(1, 229)
+        Me.Label3.Font = New System.Drawing.Font("Unispace", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(101, 258)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 15)
+        Me.Label3.Size = New System.Drawing.Size(207, 33)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Contact mail"
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(82, 226)
+        Me.TextBox2.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBox2.Location = New System.Drawing.Point(120, 304)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(136, 23)
+        Me.TextBox2.PlaceholderText = "Enter mail"
+        Me.TextBox2.Size = New System.Drawing.Size(172, 27)
         Me.TextBox2.TabIndex = 7
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(82, 44)
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button3.Location = New System.Drawing.Point(12, 12)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(111, 23)
+        Me.Button3.Size = New System.Drawing.Size(152, 51)
         Me.Button3.TabIndex = 9
         Me.Button3.Text = "BACK"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'LogItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(494, 450)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(214, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(111, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(434, 411)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox2)
@@ -93,6 +104,7 @@ Partial Class LogItem
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
         Me.Name = "LogItem"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LogItem"
         Me.ResumeLayout(False)
         Me.PerformLayout()
