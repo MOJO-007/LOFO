@@ -4,16 +4,31 @@
     <Compile Update="Ahome.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ClaimDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FindItem.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ItemDetails.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="LogDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="LogItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="PostItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ResolveClaims.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ResolveLogs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UHome.vb">

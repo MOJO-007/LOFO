@@ -70,3 +70,9 @@ C:\Users\mojog\Desktop\LoFo\LoFo\bin\Debug\net6.0-windows\runtimes\win-x86\nativ
 C:\Users\mojog\Desktop\LoFo\LoFo\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\mojog\Desktop\LoFo\LoFo\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.ItemDetails.resources
+C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.ResolveClaims.resources
+C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.ClaimDetails.resources
+C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.LogItem.resources
+C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.LogDetails.resources
+C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.ResolveLogs.resources
+C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.Resources.resources

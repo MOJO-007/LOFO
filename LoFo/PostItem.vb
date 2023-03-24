@@ -33,7 +33,7 @@ Public Class PostItem
         command.Parameters.AddWithValue("@date_found", DateTimePicker1.Value.ToString("yyyy-MM-dd"))
         command.Parameters.AddWithValue("@contact_phone", TextBox4.Text)
         command.Parameters.AddWithValue("@photo_path", Label3.Text)
-        command.Parameters.AddWithValue("@username", Login.TextBox1.Text)
+        command.Parameters.AddWithValue("@username", Login.Label3.Text)
         connection.Open()
         Dim rc As Integer = command.ExecuteNonQuery()
         If (rc > 0) Then
@@ -47,13 +47,12 @@ Public Class PostItem
         End If
         'End Using
     End Sub
-
-    Private Sub PostItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Hide()
         UHome.Show()
+    End Sub
+
+    Private Sub PostItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
