@@ -1,6 +1,10 @@
 ﻿Imports System.Windows
 Imports System.Data.SQLite
 Imports System.Collections.ObjectModel
+Imports System.Security.Cryptography
+Imports System.Text
+
+
 
 
 Public Class Login
@@ -14,17 +18,23 @@ Public Class Login
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-
+        Dim username As String = TextBox1.Text
+        Dim password As String = TextBox2.Text
 #Region "Condition"
         If (String.IsNullOrWhiteSpace(TextBox1.Text) AndAlso String.IsNullOrWhiteSpace(TextBox2.Text)) Then
             MessageBox.Show("Please fill all the fields")
             Return
         End If
+
 #End Region
+        Dim sha256 As SHA256 = SHA256.Create()
+        Dim hash As Byte() = sha256.ComputeHash(Encoding.UTF8.GetBytes(password))
+        Dim hashedPassword As String = Convert.ToBase64String(hash)
+
         Dim query As String = "SELECT usertype FROM users WHERE username = @username AND password = @password"
         Dim command As New SQLiteCommand(query, connection)
-        command.Parameters.AddWithValue("@username", TextBox1.Text)
-        command.Parameters.AddWithValue("@password", TextBox2.Text)
+        command.Parameters.AddWithValue("@username", username)
+        command.Parameters.AddWithValue("@password", hashedPassword)
 
         Dim reader As SQLiteDataReader = command.ExecuteReader()
         If reader.Read() Then

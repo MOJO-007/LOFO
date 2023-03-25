@@ -51,8 +51,4 @@ Public Class PostItem
         Me.Hide()
         UHome.Show()
     End Sub
-
-    Private Sub PostItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

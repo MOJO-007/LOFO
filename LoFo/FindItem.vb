@@ -43,6 +43,8 @@ Public Class FindItem
         colImage.ImageLayout = DataGridViewImageCellLayout.Stretch
         DataGridView1.Columns.Add(colImage)
 
+        DataGridView1.Columns(0).Name = ""
+
         For Each row As DataRow In table.Rows
             Dim id As Integer = Convert.ToInt32(row("id"))
             Dim title As String = row("item_title").ToString()

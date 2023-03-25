@@ -35,10 +35,9 @@ Partial Class ItemDetails
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(427, 9)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(488, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(262, 225)
+        Me.PictureBox1.Size = New System.Drawing.Size(299, 300)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -46,39 +45,36 @@ Partial Class ItemDetails
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Unispace", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(10, 7)
+        Me.Label1.Location = New System.Drawing.Point(11, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(144, 42)
+        Me.Label1.Size = New System.Drawing.Size(178, 51)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Label1"
         '
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.SystemColors.Menu
-        Me.TextBox1.Location = New System.Drawing.Point(10, 214)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox1.Location = New System.Drawing.Point(11, 285)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(262, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(299, 27)
         Me.TextBox1.TabIndex = 2
         '
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.SystemColors.Menu
-        Me.TextBox2.Location = New System.Drawing.Point(10, 106)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox2.Location = New System.Drawing.Point(11, 141)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(262, 66)
+        Me.TextBox2.Size = New System.Drawing.Size(299, 87)
         Me.TextBox2.TabIndex = 3
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(194, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(328, 263)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Location = New System.Drawing.Point(375, 351)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(225, 55)
+        Me.Button1.Size = New System.Drawing.Size(257, 73)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "BACK"
         Me.Button1.UseVisualStyleBackColor = False
@@ -87,9 +83,9 @@ Partial Class ItemDetails
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(10, 82)
+        Me.Label2.Location = New System.Drawing.Point(11, 109)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(269, 19)
+        Me.Label2.Size = New System.Drawing.Size(322, 24)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Give description to claim."
         '
@@ -97,9 +93,9 @@ Partial Class ItemDetails
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(10, 190)
+        Me.Label3.Location = New System.Drawing.Point(11, 253)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 19)
+        Me.Label3.Size = New System.Drawing.Size(70, 24)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Email"
         '
@@ -107,19 +103,20 @@ Partial Class ItemDetails
         '
         Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(194, Byte), Integer))
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Location = New System.Drawing.Point(67, 263)
+        Me.Button2.Location = New System.Drawing.Point(77, 351)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(225, 55)
+        Me.Button2.Size = New System.Drawing.Size(257, 73)
         Me.Button2.TabIndex = 7
         Me.Button2.Text = "Submit"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'ItemDetails
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(214, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(111, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(700, 338)
+        Me.ClientSize = New System.Drawing.Size(800, 451)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -128,7 +125,6 @@ Partial Class ItemDetails
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "ItemDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ItemDetails"

@@ -76,3 +76,4 @@ C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.LogItem.resources
 C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.LogDetails.resources
 C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.ResolveLogs.resources
 C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.Resources.resources
+C:\Users\mojog\Desktop\LoFo\LoFo\obj\Debug\net6.0-windows\LoFo.AddUsers.resources
