@@ -57,7 +57,7 @@ Public Class LogDetails
             message.From = New MailAddress("study.time0604@gmail.com")
             message.To.Add(New MailAddress(email))
             message.Subject = "Mail Regarding your item Claim"
-            message.Body = "Your Claim request is accepted! Please Contact " & contact & " And enquire about your item. - LOFO TEAM"
+            message.Body = "Your Logn is recognised! Please Contact " & contact & " And enquire about your item. - LOFO TEAM"
             message.IsBodyHtml = False
             smtpClient.Send(message)
 
@@ -67,4 +67,7 @@ Public Class LogDetails
         End Try
     End Sub
 
+    Private Sub LogDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
