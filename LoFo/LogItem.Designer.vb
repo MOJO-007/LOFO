@@ -32,7 +32,7 @@ Partial Class LogItem
         '
         'TextBox1
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBox1.Font = New System.Drawing.Font("Unispace", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.TextBox1.Location = New System.Drawing.Point(14, 173)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox1.Multiline = True
@@ -43,10 +43,10 @@ Partial Class LogItem
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Unispace", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(115, 115)
+        Me.Label1.Font = New System.Drawing.Font("Unispace", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(14, 106)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(249, 41)
+        Me.Label1.Size = New System.Drawing.Size(308, 51)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Log Details"
         '
@@ -55,7 +55,7 @@ Partial Class LogItem
         Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(194, Byte), Integer))
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(115, 461)
+        Me.Button2.Location = New System.Drawing.Point(141, 464)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(218, 71)
@@ -66,21 +66,21 @@ Partial Class LogItem
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Unispace", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(115, 344)
+        Me.Label3.Font = New System.Drawing.Font("Unispace", 25.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(12, 346)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(270, 41)
+        Me.Label3.Size = New System.Drawing.Size(334, 51)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Contact mail"
         '
         'TextBox2
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Unispace", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox2.Location = New System.Drawing.Point(137, 405)
+        Me.TextBox2.Font = New System.Drawing.Font("Unispace", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBox2.Location = New System.Drawing.Point(14, 411)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.PlaceholderText = "Enter mail"
-        Me.TextBox2.Size = New System.Drawing.Size(196, 31)
+        Me.TextBox2.PlaceholderText = "       Enter mail"
+        Me.TextBox2.Size = New System.Drawing.Size(300, 30)
         Me.TextBox2.TabIndex = 7
         '
         'Button3
