@@ -3,10 +3,6 @@ Imports System.Data.SQLite
 Imports System.Collections.ObjectModel
 Imports System.Security.Cryptography
 Imports System.Text
-
-
-
-
 Public Class Login
 
     Dim connectionString As String = "Data Source=C:\Users\mojog\Desktop\LoFo\mydatabase.db;Version=3;"
@@ -46,12 +42,10 @@ Public Class Login
                 Label3.Text = TextBox1.Text
                 TextBox1.Clear()
                 TextBox2.Clear()
-                'connection.Close()
             Else
                 MessageBox.Show("Welcome, " + TextBox1.Text)
                 Me.Hide()
                 UHome.Show()
-                ' connection.Close()
                 TextBox1.Clear()
                 TextBox2.Clear()
 
@@ -61,7 +55,6 @@ Public Class Login
             MessageBox.Show("Incorrect username or password.")
             TextBox1.Clear()
             TextBox2.Clear()
-            'connection.Close()
         End If
     End Sub
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress

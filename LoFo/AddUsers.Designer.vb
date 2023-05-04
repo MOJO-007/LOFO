@@ -45,9 +45,10 @@ Partial Class AddUsers
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox1.Font = New System.Drawing.Font("Unispace", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.TextBox1.Location = New System.Drawing.Point(225, 146)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(200, 27)
+        Me.TextBox1.Size = New System.Drawing.Size(200, 30)
         Me.TextBox1.TabIndex = 1
         '
         'Label2
@@ -73,19 +74,22 @@ Partial Class AddUsers
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox2.Font = New System.Drawing.Font("Unispace", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.TextBox2.Location = New System.Drawing.Point(225, 205)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(200, 27)
+        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox2.Size = New System.Drawing.Size(200, 30)
         Me.TextBox2.TabIndex = 3
         '
         'ComboBox1
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Unispace", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"user", "admin"})
         Me.ComboBox1.Location = New System.Drawing.Point(228, 265)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(151, 28)
+        Me.ComboBox1.Size = New System.Drawing.Size(151, 31)
         Me.ComboBox1.TabIndex = 5
         '
         'Label4

@@ -54,14 +54,16 @@ Partial Class ItemDetails
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox1.Font = New System.Drawing.Font("Unispace", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.TextBox1.Location = New System.Drawing.Point(11, 285)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(299, 27)
+        Me.TextBox1.Size = New System.Drawing.Size(299, 30)
         Me.TextBox1.TabIndex = 2
         '
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox2.Font = New System.Drawing.Font("Unispace", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.TextBox2.Location = New System.Drawing.Point(11, 141)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"

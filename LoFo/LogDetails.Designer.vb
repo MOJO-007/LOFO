@@ -87,11 +87,12 @@ Partial Class LogDetails
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.SystemColors.Menu
-        Me.TextBox2.Location = New System.Drawing.Point(14, 336)
+        Me.TextBox2.Font = New System.Drawing.Font("Unispace", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.TextBox2.Location = New System.Drawing.Point(14, 337)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(181, 27)
+        Me.TextBox2.Size = New System.Drawing.Size(181, 30)
         Me.TextBox2.TabIndex = 4
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '

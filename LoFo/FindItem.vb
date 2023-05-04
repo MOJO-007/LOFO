@@ -9,7 +9,9 @@ Imports System.Runtime.CompilerServices
 Public Class FindItem
     Dim connectionString As String = "Data Source=C:\Users\mojog\Desktop\LoFo\mydatabase.db;Version=3;"
     Public connection As New SQLiteConnection(connectionString)
+
     Private Sub FindItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         connection.Open()
         DataGridView1.ReadOnly = True
         Dim sql As String = "SELECT id, item_title, photo_path FROM found_items"
@@ -18,7 +20,7 @@ Public Class FindItem
         Dim table As New DataTable()
         adapter.Fill(table)
 
-
+        DataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridView1.AutoGenerateColumns = False
         DataGridView1.RowTemplate.Height = 200
         DataGridView1.AllowUserToAddRows = False
